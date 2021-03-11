@@ -11,17 +11,22 @@ export interface FadeProps {
   close: () => void
 }
 
-const Modal: React.FC<FadeProps> = ({ isOpen, close, children }) => {
-
+const Modal: React.FC<FadeProps> = ({ isOpen, children, close }) => {
+  /* States
+  ---------- */
   const [state, setState] = useState(false)
+  /* Refs
+  -------- */
   const containerRef = useRef(null)
-
+  /* Functions
+  ------------- */
   function handleClose(event: MouseEvent) {
     if (event.target === containerRef.current) {
       close()
     }
   }
-
+  /* Effects
+  ----------- */
   useEffect(() => {
     setTimeout(() => {
       setState(isOpen)
@@ -40,11 +45,6 @@ const Modal: React.FC<FadeProps> = ({ isOpen, close, children }) => {
       <ModalContainer>{children}</ModalContainer>
     </Fade>
   )
-    return ( 
-        <>
-
-        </>
-    );
   };
 
 export default Modal

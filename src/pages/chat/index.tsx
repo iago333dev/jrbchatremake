@@ -1,19 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react'
 import * as i from './styles'
-import { FiMail, FiLock } from "react-icons/fi";
 import Modal from './ChatModal'
 
 
 import { People } from './styles';
+import { isJsxOpeningElement } from 'typescript';
 
 interface Props {
   isOpen: boolean,
   close: () => void
 }
 
-function handleClose() {
-    close()
-}
+  function handleClose() {
+    //close()
+  }
+
 
 {/* OBJETOS PARA TESTES */ }
 const DefaultPeopleArr = [{
@@ -48,9 +49,6 @@ const DefaultMsgArr = [{
         user_uuid: "XLPK987654321",
         msg: "Mensagem 2"
 }]
-
-  
-
     
 const Chat: React.FC<Props> = ({
   isOpen,
